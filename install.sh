@@ -14,14 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-CMAKE_VERSION=${1:-'3.7.2'}
+CMAKE_VERSION=${1:-'3.8.2'}
 CMAKE_SHORT_VERSION=${CMAKE_VERSION%.*}
 
 # Uninstall the current version if any
 sudo apt-get purge -y cmake
 
 # Install CMake
-wget https://cmake.org/files/v${CMAKE_SHORT_VERSION}/cmake-${CMAKE_VERSION}-Linux-x86_64.sh
+wget --no-check-certificate https://cmake.org/files/v${CMAKE_SHORT_VERSION}/cmake-${CMAKE_VERSION}-Linux-x86_64.sh
 sudo mkdir --parent /opt/cmake
 sudo sh cmake-${CMAKE_VERSION}-Linux-x86_64.sh --prefix=/opt/cmake --skip-license
 
